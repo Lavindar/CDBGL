@@ -8,5 +8,5 @@ package br.com.cdbgl.core.card;
  *
  */
 public interface DeckShuffler {
-    public void shuffle();
+    public void shuffle(Deck<?> deck);
 }
