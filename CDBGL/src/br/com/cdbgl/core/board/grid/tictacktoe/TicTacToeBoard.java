@@ -10,11 +10,23 @@ import br.com.cdbgl.core.board.grid.GridBoard;
  *
  */
 public class TicTacToeBoard implements GridBoard<TicTacToeTile> {
+    private final TicTacToeTile tiles[][] = {
+            {new TicTacToeTile(), new TicTacToeTile(), new TicTacToeTile()},
+            {new TicTacToeTile(), new TicTacToeTile(), new TicTacToeTile()},
+            {new TicTacToeTile(), new TicTacToeTile(), new TicTacToeTile()}
+    };
 
     @Override
     public TicTacToeTile getTile(int x, int y) {
-        // TODO Auto-generated method stub
-        return null;
+        return tiles[x][y];
+    }
+    
+    public TicTacToePiece getPiece(int x, int y){
+        return tiles[x][y].getPiece();
+    }
+    
+    public boolean setPiece(int x, int y, TicTacToePiece piece){
+        return tiles[x][y].setPiece(piece);
     }
 
 }

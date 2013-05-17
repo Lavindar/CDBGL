@@ -13,6 +13,10 @@ public interface GridTile<PIECE extends GridPiece> extends Tile {
     
     public PIECE getPiece();
     
+    public boolean setPiece(PIECE piece);
+    
+    public PIECE removePiece();
+    
     public boolean isEmpty();
 
 }
