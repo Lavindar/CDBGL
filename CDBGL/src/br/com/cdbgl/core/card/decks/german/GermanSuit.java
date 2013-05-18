@@ -1,7 +1,7 @@
 /**
  * 
  */
-package br.com.cdbgl.core.card.decks.french;
+package br.com.cdbgl.core.card.decks.german;
 
 import java.awt.Color;
 
@@ -9,10 +9,10 @@ import java.awt.Color;
  * @author Lavindar
  *
  */
-public enum FrenchSuit {
-    SPADES("Spades", 1, Color.BLACK),
-    HEARTS("Hearts", 2, Color.RED),
-    DIAMONDS("Diamonds", 3, Color.RED),
+public enum GermanSuit {
+    HEARTS("Hearts", 1, Color.RED),
+    DIAMONDS("Diamonds", 2, Color.YELLOW),
+    SPADES("Spades", 3, Color.GREEN),
     CLUBS("Clubs", 4, Color.BLACK);
     
     private final String name;
@@ -24,7 +24,7 @@ public enum FrenchSuit {
      * @param rank
      * @param color
      */
-    private FrenchSuit(String name, int rank, Color color) {
+    private GermanSuit(String name, int rank, Color color) {
         this.name = name;
         this.rank = rank;
         this.color = color;

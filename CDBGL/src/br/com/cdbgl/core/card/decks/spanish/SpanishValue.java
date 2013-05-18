@@ -1,58 +1,44 @@
 /**
  * 
  */
-package br.com.cdbgl.core.card.decks.french;
+package br.com.cdbgl.core.card.decks.spanish;
 
 /**
  * @author Lavindar
  *
  */
-public enum FrenchValue {
-    JOKER("Joker", "JOKER", 0),
-    ACE("Ace", "A", 1),
+public enum SpanishValue {
+    ONE("One", "1", 1),
     TWO("Two", "2", 2),
-    TRHEE("Three", "2", 3),
+    THREE("Three", "3", 3),
     FOUR("Four", "4", 4),
     FIVE("Five", "5", 5),
     SIX("Six", "6", 6),
     SEVEN("Seven", "7", 7),
     EIGHT("Eight", "8", 8),
     NINE("Nine", "9", 9),
-    TEN("Ten", "10", 10),
-    JACK("Jack", "J", 11),
-    QUEEN("Queen", "Q", 12),
-    KING("King", "K", 13);
+    KNAVE("Knave", "10", 10),
+    KNIGHT("Knight", "11", 11),
+    KING("King", "12", 12);    
     
     private final String name;
     private final String symbol;
     private final int value;
     
-    /**
-     * @param name
-     * @param symbol
-     * @param value
-     */
-    private FrenchValue(String name, String symbol, int value) {
+    private SpanishValue(String name, String symbol, int value) {
         this.name = name;
         this.symbol = symbol;
         this.value = value;
     }
     
-    /**
-     * @return the name
-     */
     public String getName() {
         return name;
     }
-    /**
-     * @return the symbol
-     */
+    
     public String getSymbol() {
         return symbol;
     }
-    /**
-     * @return the value
-     */
+    
     public int getValue() {
         return value;
     }
@@ -60,5 +46,4 @@ public enum FrenchValue {
     public String toString(){
         return name;
     }
-    
 }
