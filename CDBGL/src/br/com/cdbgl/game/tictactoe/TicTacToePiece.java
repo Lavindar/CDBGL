@@ -1,7 +1,7 @@
 /**
  * 
  */
-package br.com.cdbgl.core.board.grid.tictacktoe;
+package br.com.cdbgl.game.tictactoe;
 
 import br.com.cdbgl.core.board.grid.GridPiece;
 
@@ -10,15 +10,21 @@ import br.com.cdbgl.core.board.grid.GridPiece;
  *
  */
 public enum TicTacToePiece implements GridPiece {
-    CROSSES(0, "O"),
-    NOUGHTS(1, "X");
+    NOUGHTS("Noughts", 0, "O"),
+    CROSSES("Crosses", 1, "X");
     
+    private final String name;
     private final int value;
     private final String symbol;
     
-    private TicTacToePiece(int value, String symbol){
+    private TicTacToePiece(String name, int value, String symbol){
+        this.name = name;
         this.value = value;
         this.symbol = symbol;
+    }
+    
+    public String getName(){
+        return name;
     }
     
     public int getValue() {
@@ -29,6 +35,8 @@ public enum TicTacToePiece implements GridPiece {
         return symbol;
     }
     
-    
+    public String toString(){
+        return name;
+    }
 
 }

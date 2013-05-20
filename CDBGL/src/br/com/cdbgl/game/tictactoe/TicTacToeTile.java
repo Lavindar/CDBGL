@@ -1,7 +1,7 @@
 /**
  * 
  */
-package br.com.cdbgl.core.board.grid.tictacktoe;
+package br.com.cdbgl.game.tictactoe;
 
 import br.com.cdbgl.core.board.grid.GridTile;
 

@@ -17,7 +17,11 @@ public interface Deck<CARD_TYPE extends Card<?, ?>> {
     
     public CARD_TYPE lookBottonCard();
     
+    public int getNumberOfCards();
+    
     public void registerShuffler(DeckShuffler shuffler);
+    
+    public void unregisterShuffler();
     
     public void shuffle();
 
