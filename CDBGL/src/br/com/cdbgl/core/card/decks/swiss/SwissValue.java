@@ -6,18 +6,18 @@ public enum SwissValue {
     EIGHT("Eight", "8", 8),
     NINE("Nine", "9", 9),
     BANNER("Banner", "B", 10),
-    UDER("Uder", "U", 11),
-    OBER("Ober", "O", 12),
-    KONIG("König", "K", 13),
-    AS("As", "A", 14);
+    UNDER("Under", "U", 11),
+    TOP("Top", "T", 12),
+    KING("King", "K", 13),
+    ACE("Ace", "A", 14);
     
     private final String name;
-    private final String symbom;
+    private final String symbol;
     private final int value;
     
     private SwissValue(String name, String symbom, int value) {
         this.name = name;
-        this.symbom = symbom;
+        this.symbol = symbom;
         this.value = value;
     }
 
@@ -26,7 +26,7 @@ public enum SwissValue {
     }
 
     public String getSymbom() {
-        return symbom;
+        return symbol;
     }
 
     public int getValue() {

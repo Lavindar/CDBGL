@@ -1,18 +1,18 @@
 package br.com.cdbgl.core.card.decks.hanafuda;
 
 public enum HanafudaFlower {
-    MATSU("Matsu", 1),
-    UME("Ume", 2),
-    SAKURA("Sakura", 3),
-    FUJI("Fuji", 4),
-    AYAME("Ayame", 5),
-    BOTAN("Botan", 6),
-    HAGI("Hagi", 7),
-    SUSUKI("Susuki", 8),
-    KIKU("Kiku", 9),
-    MOMIJI("Momiji", 10),
-    YANAGI("Yanagi", 11),
-    KIRI("Kiri", 12);
+    PINE("Pine", 1),
+    PLUM_BLOSSOM("Plum Blossom", 2),
+    CHERRY_BLOSSOM("Cherry Blossom", 3),
+    WISTERIA("Wisteria", 4),
+    IRIS("Iris", 5),
+    PEONY("Peony", 6),
+    BUSH_CLOVER("Bush Clover", 7),
+    PAMPAS("Pampas", 8),
+    CHRYSANTHEMUM("Chrysanthemum", 9),
+    MAPLE("Maple", 10),
+    WILLOW("Willow", 11),
+    PAULOWNIA("Paulownia", 12);
     
     private final String name;
     private final int monthNumber;

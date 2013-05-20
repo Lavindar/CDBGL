@@ -7,7 +7,7 @@ package br.com.cdbgl.core.card;
  * @author Lavindar
  *
  */
-public interface Deck<CARD_TYPE extends Card<?>> {
+public interface Deck<CARD_TYPE extends Card<?, ?>> {
     
     public CARD_TYPE pickTopCard();
 
