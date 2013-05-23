@@ -5,15 +5,17 @@ package br.com.cdbgl.core.card.decks.french;
 
 import java.awt.Color;
 
+import br.com.cdbgl.core.NameProvider;
+
 /**
  * @author Lavindar
  *
  */
 public enum FrenchSuit {
-    SPADES("Spades", 1, Color.BLACK),
-    HEARTS("Hearts", 2, Color.RED),
-    DIAMONDS("Diamonds", 3, Color.RED),
-    CLUBS("Clubs", 4, Color.BLACK);
+    SPADES(NameProvider.getName("card.french.suit.spades"), 1, Color.BLACK),
+    HEARTS(NameProvider.getName("card.french.suit.hearts"), 2, Color.RED),
+    DIAMONDS(NameProvider.getName("card.french.suit.diamonds"), 3, Color.RED),
+    CLUBS(NameProvider.getName("card.french.suit.clubs"), 4, Color.BLACK);
     
     private final String name;
     private final int rank;
