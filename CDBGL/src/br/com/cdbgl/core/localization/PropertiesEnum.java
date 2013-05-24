@@ -33,7 +33,8 @@ public enum PropertiesEnum {
     CARD_FRENCH_SYMBOL_JACK("card.french.symbol.jack", "J"),
     CARD_FRENCH_SYMBOL_QUEEN("card.french.symbol.queen", "Q"),
     CARD_FRENCH_SYMBOL_KING("card.french.symbol.king", "K"),
-    CARD_FRENCH_SEPARATOR("card.french.separator","[VALUE] of [SUIT]");
+    CARD_FRENCH_SEPARATOR("card.french.separator","[VALUE] of [SUIT]"),
+    CARD_GERMAN_SUIT_HEARTS("card.german.suit.hearts","Hearts");
     
     private final String key;
     private final String defaultValue;
