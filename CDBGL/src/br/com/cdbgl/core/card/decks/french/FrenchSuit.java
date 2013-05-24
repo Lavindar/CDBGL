@@ -5,19 +5,20 @@ package br.com.cdbgl.core.card.decks.french;
 
 import java.awt.Color;
 
-import br.com.cdbgl.core.NameProvider;
+import br.com.cdbgl.core.localization.NameProvider;
+import br.com.cdbgl.core.localization.PropertiesEnum;
 
 /**
  * @author Lavindar
  *
  */
 public enum FrenchSuit {
-    SPADES(NameProvider.getName("card.french.suit.spades"), 1, Color.BLACK),
-    HEARTS(NameProvider.getName("card.french.suit.hearts"), 2, Color.RED),
-    DIAMONDS(NameProvider.getName("card.french.suit.diamonds"), 3, Color.RED),
-    CLUBS(NameProvider.getName("card.french.suit.clubs"), 4, Color.BLACK);
+    SPADES(PropertiesEnum.CARD_FRENCH_SUIT_SPADES, 1, Color.BLACK),
+    HEARTS(PropertiesEnum.CARD_FRENCH_SUIT_HEARTS, 2, Color.RED),
+    DIAMONDS(PropertiesEnum.CARD_FRENCH_SUIT_DIAMONDS, 3, Color.RED),
+    CLUBS(PropertiesEnum.CARD_FRENCH_SUIT_CLUBS, 4, Color.BLACK);
     
-    private final String name;
+    private final PropertiesEnum name;
     private final int rank;
     private final Color color;
     
@@ -26,7 +27,7 @@ public enum FrenchSuit {
      * @param rank
      * @param color
      */
-    private FrenchSuit(String name, int rank, Color color) {
+    private FrenchSuit(PropertiesEnum name, int rank, Color color) {
         this.name = name;
         this.rank = rank;
         this.color = color;
@@ -36,7 +37,7 @@ public enum FrenchSuit {
      * @return the name
      */
     public String getName() {
-        return name;
+        return NameProvider.getName(name.getKey());
     }
 
     /**
@@ -54,6 +55,6 @@ public enum FrenchSuit {
     }
     
     public String toString(){
-        return name;
+        return getName();
     }
 }

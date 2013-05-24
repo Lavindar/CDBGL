@@ -4,6 +4,8 @@
 package br.com.cdbgl.core.card.decks.french;
 
 import br.com.cdbgl.core.card.Card;
+import br.com.cdbgl.core.localization.NameProvider;
+import br.com.cdbgl.core.localization.PropertiesEnum;
 
 /**
  * @author Lavindar
@@ -13,7 +15,7 @@ public enum FrenchCard implements Card<FrenchValue, FrenchSuit> {
     JOKER(FrenchValue.JOKER, null),
     ACE_OF_SPADES(FrenchValue.ACE, FrenchSuit.SPADES),
     TWO_OF_SPADES(FrenchValue.TWO, FrenchSuit.SPADES),
-    TRHEE_OF_SPADES(FrenchValue.TRHEE, FrenchSuit.SPADES),
+    TRHEE_OF_SPADES(FrenchValue.THREE, FrenchSuit.SPADES),
     FOUR_OF_SPADES(FrenchValue.FOUR, FrenchSuit.SPADES),
     FIVE_OF_SPADES(FrenchValue.FIVE, FrenchSuit.SPADES),
     SIX_OF_SPADES(FrenchValue.SIX, FrenchSuit.SPADES),
@@ -26,7 +28,7 @@ public enum FrenchCard implements Card<FrenchValue, FrenchSuit> {
     KING_OF_SPADES(FrenchValue.KING, FrenchSuit.SPADES),
     ACE_OF_HEARTS(FrenchValue.ACE, FrenchSuit.HEARTS),
     TWO_OF_HEARTS(FrenchValue.TWO, FrenchSuit.HEARTS),
-    TRHEE_OF_HEARTS(FrenchValue.TRHEE, FrenchSuit.HEARTS),
+    TRHEE_OF_HEARTS(FrenchValue.THREE, FrenchSuit.HEARTS),
     FOUR_OF_HEARTS(FrenchValue.FOUR, FrenchSuit.HEARTS),
     FIVE_OF_HEARTS(FrenchValue.FIVE, FrenchSuit.HEARTS),
     SIX_OF_HEARTS(FrenchValue.SIX, FrenchSuit.HEARTS),
@@ -39,7 +41,7 @@ public enum FrenchCard implements Card<FrenchValue, FrenchSuit> {
     KING_OF_HEARTS(FrenchValue.KING, FrenchSuit.HEARTS),
     ACE_OF_DIAMONDS(FrenchValue.ACE, FrenchSuit.DIAMONDS),
     TWO_OF_DIAMONDS(FrenchValue.TWO, FrenchSuit.DIAMONDS),
-    TRHEE_OF_DIAMONDS(FrenchValue.TRHEE, FrenchSuit.DIAMONDS),
+    TRHEE_OF_DIAMONDS(FrenchValue.THREE, FrenchSuit.DIAMONDS),
     FOUR_OF_DIAMONDS(FrenchValue.FOUR, FrenchSuit.DIAMONDS),
     FIVE_OF_DIAMONDS(FrenchValue.FIVE, FrenchSuit.DIAMONDS),
     SIX_OF_DIAMONDS(FrenchValue.SIX, FrenchSuit.DIAMONDS),
@@ -52,7 +54,7 @@ public enum FrenchCard implements Card<FrenchValue, FrenchSuit> {
     KING_OF_DIAMONDS(FrenchValue.KING, FrenchSuit.DIAMONDS),
     ACE_OF_CLUBS(FrenchValue.ACE, FrenchSuit.CLUBS),
     TWO_OF_CLUBS(FrenchValue.TWO, FrenchSuit.CLUBS),
-    TRHEE_OF_CLUBS(FrenchValue.TRHEE, FrenchSuit.CLUBS),
+    TRHEE_OF_CLUBS(FrenchValue.THREE, FrenchSuit.CLUBS),
     FOUR_OF_CLUBS(FrenchValue.FOUR, FrenchSuit.CLUBS),
     FIVE_OF_CLUBS(FrenchValue.FIVE, FrenchSuit.CLUBS),
     SIX_OF_CLUBS(FrenchValue.SIX, FrenchSuit.CLUBS),
@@ -85,7 +87,12 @@ public enum FrenchCard implements Card<FrenchValue, FrenchSuit> {
     @Override
     public String toString(){
         if(suit != null){
-            return value + " of " + suit;
+            String r = NameProvider.getName(PropertiesEnum.CARD_FRENCH_SEPARATOR.getKey());
+            
+            r = r.replaceAll("\\[VALUE\\]", value.getName());
+            r = r.replaceAll("\\[SUIT\\]", suit.getName());
+            
+            return r;
         } else {
             return value.toString();
         }
