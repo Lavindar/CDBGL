@@ -3,40 +3,43 @@
  */
 package br.com.cdbgl.core.card.decks.spanish;
 
+import br.com.cdbgl.core.localization.NameProvider;
+import br.com.cdbgl.core.localization.PropertiesEnum;
+
 /**
  * @author Lavindar
  *
  */
 public enum SpanishValue {
-    ONE("One", "1", 1),
-    TWO("Two", "2", 2),
-    THREE("Three", "3", 3),
-    FOUR("Four", "4", 4),
-    FIVE("Five", "5", 5),
-    SIX("Six", "6", 6),
-    SEVEN("Seven", "7", 7),
-    EIGHT("Eight", "8", 8),
-    NINE("Nine", "9", 9),
-    KNAVE("Knave", "10", 10),
-    KNIGHT("Knight", "11", 11),
-    KING("King", "12", 12);    
+    ONE(PropertiesEnum.CARD_SPANISH_VALUE_ONE, PropertiesEnum.CARD_SPANISH_SYMBOL_ONE, 1),
+    TWO(PropertiesEnum.CARD_SPANISH_VALUE_TWO, PropertiesEnum.CARD_SPANISH_SYMBOL_TWO, 2),
+    THREE(PropertiesEnum.CARD_SPANISH_VALUE_THREE, PropertiesEnum.CARD_SPANISH_SYMBOL_THREE, 3),
+    FOUR(PropertiesEnum.CARD_SPANISH_VALUE_FOUR, PropertiesEnum.CARD_SPANISH_SYMBOL_FOUR, 4),
+    FIVE(PropertiesEnum.CARD_SPANISH_VALUE_FIVE, PropertiesEnum.CARD_SPANISH_SYMBOL_FIVE, 5),
+    SIX(PropertiesEnum.CARD_SPANISH_VALUE_SIX, PropertiesEnum.CARD_SPANISH_SYMBOL_SIX, 6),
+    SEVEN(PropertiesEnum.CARD_SPANISH_VALUE_SEVEN, PropertiesEnum.CARD_SPANISH_SYMBOL_SEVEN, 7),
+    EIGHT(PropertiesEnum.CARD_SPANISH_VALUE_EIGHT, PropertiesEnum.CARD_SPANISH_SYMBOL_EIGHT, 8),
+    NINE(PropertiesEnum.CARD_SPANISH_VALUE_NINE, PropertiesEnum.CARD_SPANISH_SYMBOL_NINE, 9),
+    KNAVE(PropertiesEnum.CARD_SPANISH_VALUE_KNAVE, PropertiesEnum.CARD_SPANISH_SYMBOL_KNAVE, 10),
+    KNIGHT(PropertiesEnum.CARD_SPANISH_VALUE_KNIGHT, PropertiesEnum.CARD_SPANISH_SYMBOL_KNIGHT, 11),
+    KING(PropertiesEnum.CARD_SPANISH_VALUE_KING, PropertiesEnum.CARD_SPANISH_SYMBOL_KING, 12);    
     
-    private final String name;
-    private final String symbol;
+    private final PropertiesEnum name;
+    private final PropertiesEnum symbol;
     private final int value;
     
-    private SpanishValue(String name, String symbol, int value) {
+    private SpanishValue(PropertiesEnum name, PropertiesEnum symbol, int value) {
         this.name = name;
         this.symbol = symbol;
         this.value = value;
     }
     
     public String getName() {
-        return name;
+        return NameProvider.getName(name.getKey());
     }
     
     public String getSymbol() {
-        return symbol;
+        return NameProvider.getName(symbol.getKey());
     }
     
     public int getValue() {
@@ -44,6 +47,6 @@ public enum SpanishValue {
     }
     
     public String toString(){
-        return name;
+        return getName();
     }
 }

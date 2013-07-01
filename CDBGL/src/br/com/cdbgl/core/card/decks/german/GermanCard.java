@@ -4,6 +4,8 @@
 package br.com.cdbgl.core.card.decks.german;
 
 import br.com.cdbgl.core.card.Card;
+import br.com.cdbgl.core.localization.NameProvider;
+import br.com.cdbgl.core.localization.PropertiesEnum;
 
 /**
  * @author Lavindar
@@ -67,6 +69,11 @@ public enum GermanCard implements Card<GermanValue, GermanSuit> {
 
     @Override
     public String toString() {
-        return value + " of " + suit;
+        String r = NameProvider.getName(PropertiesEnum.CARD_GERMAN_SEPARATOR.getKey());
+        
+        r = r.replaceAll("\\[VALUE\\]", value.getName());
+        r = r.replaceAll("\\[SUIT\\]", suit.getName());
+        
+        return r;
     }
 }

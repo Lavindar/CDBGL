@@ -20,12 +20,12 @@ public final class NameProvider {
         properties = new Properties(defaultProperties);
     }
 
-    public static void registerPropertiesFile(FileInputStream file) throws IOException{
+    public static void registerProperties(FileInputStream file) throws IOException{
         properties = new Properties(defaultProperties);
         properties.load(file);
     }
     
-    public static void registerPropertiesFile(Properties p){
+    public static void registerProperties(Properties p){
         properties = new Properties(defaultProperties);
         properties.putAll(p);
     }

@@ -4,6 +4,8 @@
 package br.com.cdbgl.core.card.decks.spanish;
 
 import br.com.cdbgl.core.card.Card;
+import br.com.cdbgl.core.localization.NameProvider;
+import br.com.cdbgl.core.localization.PropertiesEnum;
 
 /**
  * @author Lavindar
@@ -79,6 +81,11 @@ public enum SpanishCard implements Card<SpanishValue, SpanishSuit> {
 
     @Override
     public String toString() {
-        return value + " of " + suit;
+        String r = NameProvider.getName(PropertiesEnum.CARD_SPANISH_SEPARATOR.getKey());
+        
+        r = r.replaceAll("\\[VALUE\\]", value.getName());
+        r = r.replaceAll("\\[SUIT\\]", suit.getName());
+        
+        return r;
     }
 }

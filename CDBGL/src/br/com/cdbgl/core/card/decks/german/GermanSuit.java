@@ -5,17 +5,20 @@ package br.com.cdbgl.core.card.decks.german;
 
 import java.awt.Color;
 
+import br.com.cdbgl.core.localization.NameProvider;
+import br.com.cdbgl.core.localization.PropertiesEnum;
+
 /**
  * @author Lavindar
  *
  */
 public enum GermanSuit {
-    HEARTS("Hearts", 1, Color.RED),
-    DIAMONDS("Diamonds", 2, Color.YELLOW),
-    SPADES("Spades", 3, Color.GREEN),
-    CLUBS("Clubs", 4, Color.BLACK);
+    HEARTS(PropertiesEnum.CARD_GERMAN_SUIT_HEARTS, 1, Color.RED),
+    DIAMONDS(PropertiesEnum.CARD_GERMAN_SUIT_DIAMONDS, 2, Color.YELLOW),
+    SPADES(PropertiesEnum.CARD_GERMAN_SUIT_SPADES, 3, Color.GREEN),
+    CLUBS(PropertiesEnum.CARD_GERMAN_SUIT_CLUBS, 4, Color.BLACK);
     
-    private final String name;
+    private final PropertiesEnum name;
     private final int rank;
     private final Color color;
     
@@ -24,7 +27,7 @@ public enum GermanSuit {
      * @param rank
      * @param color
      */
-    private GermanSuit(String name, int rank, Color color) {
+    private GermanSuit(PropertiesEnum name, int rank, Color color) {
         this.name = name;
         this.rank = rank;
         this.color = color;
@@ -34,7 +37,7 @@ public enum GermanSuit {
      * @return the name
      */
     public String getName() {
-        return name;
+        return NameProvider.getName(name.getKey());
     }
 
     /**
@@ -52,6 +55,6 @@ public enum GermanSuit {
     }
     
     public String toString(){
-        return name;
+        return getName();
     }
 }

@@ -1,32 +1,35 @@
 package br.com.cdbgl.core.card.decks.swiss;
 
+import br.com.cdbgl.core.localization.NameProvider;
+import br.com.cdbgl.core.localization.PropertiesEnum;
+
 public enum SwissValue {
-    SIX("Six", "6", 6),
-    SEVEN("Seven", "7", 6),
-    EIGHT("Eight", "8", 8),
-    NINE("Nine", "9", 9),
-    BANNER("Banner", "B", 10),
-    UNDER("Under", "U", 11),
-    TOP("Top", "T", 12),
-    KING("King", "K", 13),
-    ACE("Ace", "A", 14);
+    SIX(PropertiesEnum.CARD_SWISS_VALUE_SIX, PropertiesEnum.CARD_SWISS_SYMBOL_SIX, 6),
+    SEVEN(PropertiesEnum.CARD_SWISS_VALUE_SEVEN, PropertiesEnum.CARD_SWISS_SYMBOL_SEVEN, 6),
+    EIGHT(PropertiesEnum.CARD_SWISS_VALUE_EIGHT, PropertiesEnum.CARD_SWISS_SYMBOL_EIGHT, 8),
+    NINE(PropertiesEnum.CARD_SWISS_VALUE_NINE, PropertiesEnum.CARD_SWISS_SYMBOL_NINE, 9),
+    BANNER(PropertiesEnum.CARD_SWISS_VALUE_BANNER, PropertiesEnum.CARD_SWISS_SYMBOL_BANNER, 10),
+    UNDER(PropertiesEnum.CARD_SWISS_VALUE_UNDER, PropertiesEnum.CARD_SWISS_SYMBOL_UNDER, 11),
+    TOP(PropertiesEnum.CARD_SWISS_VALUE_TOP, PropertiesEnum.CARD_SWISS_SYMBOL_TOP, 12),
+    KING(PropertiesEnum.CARD_SWISS_VALUE_KING, PropertiesEnum.CARD_SWISS_SYMBOL_KING, 13),
+    ACE(PropertiesEnum.CARD_SWISS_VALUE_ACE, PropertiesEnum.CARD_SWISS_SYMBOL_ACE, 14);
     
-    private final String name;
-    private final String symbol;
+    private final PropertiesEnum name;
+    private final PropertiesEnum symbol;
     private final int value;
     
-    private SwissValue(String name, String symbom, int value) {
+    private SwissValue(PropertiesEnum name, PropertiesEnum symbom, int value) {
         this.name = name;
         this.symbol = symbom;
         this.value = value;
     }
 
     public String getName() {
-        return name;
+        return NameProvider.getName(name.getKey());
     }
 
     public String getSymbom() {
-        return symbol;
+        return NameProvider.getName(symbol.getKey());
     }
 
     public int getValue() {
@@ -34,6 +37,6 @@ public enum SwissValue {
     }
     
     public String toString(){
-        return name;
+        return getName();
     }
 }

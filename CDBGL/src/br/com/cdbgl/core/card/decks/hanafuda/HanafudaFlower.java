@@ -1,29 +1,32 @@
 package br.com.cdbgl.core.card.decks.hanafuda;
 
+import br.com.cdbgl.core.localization.NameProvider;
+import br.com.cdbgl.core.localization.PropertiesEnum;
+
 public enum HanafudaFlower {
-    PINE("Pine", 1),
-    PLUM_BLOSSOM("Plum Blossom", 2),
-    CHERRY_BLOSSOM("Cherry Blossom", 3),
-    WISTERIA("Wisteria", 4),
-    IRIS("Iris", 5),
-    PEONY("Peony", 6),
-    BUSH_CLOVER("Bush Clover", 7),
-    PAMPAS("Pampas", 8),
-    CHRYSANTHEMUM("Chrysanthemum", 9),
-    MAPLE("Maple", 10),
-    WILLOW("Willow", 11),
-    PAULOWNIA("Paulownia", 12);
+    PINE(PropertiesEnum.CARD_HANAFUDA_FLOWER_PINE, 1),
+    PLUM_BLOSSOM(PropertiesEnum.CARD_HANAFUDA_FLOWER_PLUM_BLOSSOM, 2),
+    CHERRY_BLOSSOM(PropertiesEnum.CARD_HANAFUDA_FLOWER_CHERRY_BLOSSOM, 3),
+    WISTERIA(PropertiesEnum.CARD_HANAFUDA_FLOWER_WISTERIA, 4),
+    IRIS(PropertiesEnum.CARD_HANAFUDA_FLOWER_IRIS, 5),
+    PEONY(PropertiesEnum.CARD_HANAFUDA_FLOWER_PEONY, 6),
+    BUSH_CLOVER(PropertiesEnum.CARD_HANAFUDA_FLOWER_BUSH_CLOVER, 7),
+    PAMPAS(PropertiesEnum.CARD_HANAFUDA_FLOWER_PAMPAS, 8),
+    CHRYSANTHEMUM(PropertiesEnum.CARD_HANAFUDA_FLOWER_CHRYSANTHEMUM, 9),
+    MAPLE(PropertiesEnum.CARD_HANAFUDA_FLOWER_MAPLE, 10),
+    WILLOW(PropertiesEnum.CARD_HANAFUDA_FLOWER_WILLOW, 11),
+    PAULOWNIA(PropertiesEnum.CARD_HANAFUDA_FLOWER_PAULOWNIA, 12);
     
-    private final String name;
+    private final PropertiesEnum name;
     private final int monthNumber;
 
-    private HanafudaFlower(String name, int monthNumber) {
+    private HanafudaFlower(PropertiesEnum name, int monthNumber) {
         this.name = name;
         this.monthNumber = monthNumber;
     }
 
     public String getName() {
-        return name;
+        return NameProvider.getName(name.getKey());
     }
 
     public int getMonthNumber() {
@@ -31,6 +34,6 @@ public enum HanafudaFlower {
     }
     
     public String toString(){
-        return name;
+        return getName();
     }
 }
