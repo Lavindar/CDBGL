@@ -8,5 +8,5 @@ package br.com.cdbgl.core.board;
  *
  */
 public interface Board {
-
+//testetet
 }
